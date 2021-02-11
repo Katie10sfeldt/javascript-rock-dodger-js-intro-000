@@ -92,6 +92,20 @@ function createRock(x) {
      * we should call endGame().
      */
 
+     if (checkCollision(rock) === true) {
+       endGame();
+     } else {
+       const topOfRock = positionToInteger(rock.style.top)
+       const bottomOfRock = topOfRock - 20;
+
+       if (bottomOfRock > 0) {
+         rock.style.top = `${topRock - 2}px`;
+         window.requestAnimationFrame(moveRock);
+       } else {
+         GAME.removeChild(rock);
+       }
+     }
+
     /**
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
@@ -104,7 +118,7 @@ function createRock(x) {
   }
 
   // We should kick off the animation of the rock around here.
-
+  window.requestAnimationFrame(moveRock);
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision.
   ROCKS.push(rock)
