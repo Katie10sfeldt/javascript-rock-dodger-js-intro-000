@@ -91,15 +91,14 @@ function createRock(x) {
      * If a rock collides with the DODGER,
      * we should call endGame().
      */
-
      if (checkCollision(rock) === true) {
        endGame();
      }
      else {
-       const topOfRock = positionToInteger(rock.style.top);
-       const bottomOfRock = topOfRock - 20;
-       if (bottomOfRock > 0) {
-         rock.style.top = `${topOfRock - 2}px`;
+       const topRock = positionToInteger(rock.style.top);
+       const bottomRock = topRock - 20;
+       if (bottomRock > 0) {
+         rock.style.top = `${topRock - 2}px`;
          window.requestAnimationFrame(moveRock);
        }
        else {
