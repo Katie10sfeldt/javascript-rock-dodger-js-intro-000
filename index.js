@@ -98,7 +98,7 @@ function createRock(x) {
      else {
        const topOfRock = positionToInteger(rock.style.top);
        const bottomOfRock = topOfRock - 20;
-       if (bottomofRock > 0) {
+       if (bottomOfRock > 0) {
          rock.style.top = `${topOfRock - 2}px`;
          window.requestAnimationFrame(moveRock);
        }
