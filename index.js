@@ -94,15 +94,17 @@ function createRock(x) {
 
      if (checkCollision(rock) === true) {
        endGame();
-     } else {
-       const topOfRock = positionToInteger(rock.style.top)
+     }
+     else {
+       const topOfRock = positionToInteger(rock.style.top);
        const bottomOfRock = topOfRock - 20;
-
-       if (bottomOfRock > 0) {
-         rock.style.top = `${topRock - 2}px`;
+       if (bottomRock > 0) {
+         rock.style.top = `${topOfRock - 2}px`;
          window.requestAnimationFrame(moveRock);
-       } else {
+       }
+       else {
          GAME.removeChild(rock);
+
        }
      }
 
