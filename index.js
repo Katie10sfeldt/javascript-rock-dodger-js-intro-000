@@ -159,7 +159,7 @@ function moveDodgerRight() {
 
    if (rightNumbers < 0) {
      rightNumbers -= 4;
-     DODGER.style.left = `${rightNumbers}px`;
+     DODGER.style.right = `${rightNumbers}px`;
      window.requestAnimationFrame(moveDodgerRight);
    }
 }
