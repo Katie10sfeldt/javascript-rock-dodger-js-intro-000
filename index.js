@@ -154,11 +154,11 @@ function moveDodgerRight() {
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
    var leftNumbers = positionToInteger(DODGER.style.left);
-   if (leftNumbers > 0) {
+   if (leftNumbers < 360) {
      leftNumbers += 4;
      DODGER.style.left = `${leftNumbers}px`;
-     window.requestAnimationFrame(moveDodgerLeft);
-   }
+     window.requestAnimationFrame(moveDodgerRight);
+ }
 }
 
 /**
